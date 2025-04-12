@@ -316,19 +316,19 @@ class Miner(BaseMinerNeuron):
         """
         
         # with open("input.txt", "a") as file:
-        #     file.write(document + "\n\n=======================\n\n")
+        #     file.write("\n\n=======================\n\n" + document)
         
         # default_document = self.default_chunker(document, chunk_size, max_num_chunks)
         # with open("default_output.txt", "a") as file:
+        #     file.write("\n\n=======================\n\n")
         #     for item in default_document:
         #         file.write(item + "\n\n-------------------------\n\n")
-        #     file.write("\n\n=======================\n\n")
-        
+            
         custom_document = await chunking_0_up(document, chunk_size, max_num_chunks)
         # with open("custom_output.txt", "a") as file:
+        #     file.write("\n\n=======================\n\n")
         #     for item in custom_document:
         #         file.write(item + "\n\n-------------------------\n\n")
-        #     file.write("\n\n=======================\n\n")
         
         return custom_document
 
