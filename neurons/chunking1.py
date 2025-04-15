@@ -730,9 +730,22 @@ async def chunking_0_up(text, chunk_size, chunk_qty):
     sent_embeddings = np.array([item.embedding for item in res.data])
     sent_dots = sent_embeddings@sent_embeddings.T
 
-    chunks0 = chunking_init_0(chunk_size, chunk_qty, sent_lengths, sent_qty, sent_embeddings)
     time_limit = 6
     start_time = time.time()
+
+    # len_text = len(text)
+    # fname = str(len_text) + '_' + str(chunk_size) + '_' + str(chunk_qty)
+    # with open("data/" + fname + '.txt', 'w') as f:
+    #     f.write(text)
+    # with open("data/" + fname + '.csv', 'w') as f:
+    #     for i in range(len(sent_embeddings)):
+    #         for j in range(len(sent_embeddings[0])):
+    #             if j == len(sent_embeddings[0]) - 1:
+    #                 f.write(str(sent_embeddings[i, j]) + '\n')
+    #             else:
+    #                 f.write(str(sent_embeddings[i, j]) + ',')
+    
+    chunks0 = chunking_init_0(chunk_size, chunk_qty, sent_lengths, sent_qty, sent_embeddings)
     chunks1 = chunks0
     for upd in range(10):
         time1 = time.time()
